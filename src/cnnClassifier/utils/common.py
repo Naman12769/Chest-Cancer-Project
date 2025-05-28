@@ -1,8 +1,8 @@
-
+from typing import Union
 import os
 from box.exceptions import BoxValueError
 import yaml
-from cnnClassifier import logger
+from src.cnnClassifier import logger
 import json
 import joblib
 from ensure import ensure_annotations
@@ -10,11 +10,12 @@ from box import ConfigBox
 from pathlib import Path
 from typing import Any
 import base64
+# from pathlib import Path
 
 
 
 @ensure_annotations
-def read_yaml(path_to_yaml: Path) -> ConfigBox:
+def read_yaml(path_to_yaml: Union[str,Path]) -> ConfigBox:
     """reads yaml file and returns
 
     Args:
